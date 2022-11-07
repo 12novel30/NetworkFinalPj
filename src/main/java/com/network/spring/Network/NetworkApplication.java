@@ -8,7 +8,7 @@ public class NetworkApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(NetworkApplication.class, args);
-		System.out.println("fight!");
+		System.out.println("fight! ");
 	}
 
 }
