@@ -33,8 +33,6 @@ public class UserDto {
         private String Email;
         @NotNull
         private String Password;
-        @NotNull
-        private String Account;
     }
 
     @Getter
@@ -52,8 +50,6 @@ public class UserDto {
         @NotNull
         private String Password;
         @Nullable
-        private String Account;
-        @NotNull
         private Timestamp InputTime;
 
         public static Response fromEntity(User user) {
