@@ -36,7 +36,6 @@ public class UserController {
     }
     @PostMapping(value = "/login")
     public UserDto.Response login(@RequestBody Map map) {
-
         UserDto.Login login = UserDto.Login.builder()
                 .Email(map.get("Email").toString())
                 .Password(map.get("Password").toString())
