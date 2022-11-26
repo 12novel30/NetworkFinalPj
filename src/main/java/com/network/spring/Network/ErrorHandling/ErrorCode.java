@@ -10,6 +10,7 @@ public enum ErrorCode {
     INTER_SERVER_ERROR(500,"COMMON-ERR-500","INTER SERVER ERROR"),
 
     NO_USER(500, "USER-ERR-500", "There is no corresponding USER."),
+    NO_PLACE(500, "PLACE-ERR-500", "There is no corresponding PLACE."),
     WRONG_EMAIL(500,"LOGIN-ERR-500","There is no such email information."),
     WRONG_PASSWORD(500, "LOGIN-ERR-500","Invalid password."),
 

@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 import static com.network.spring.Network.ErrorHandling.ErrorCode.*;
 
 @Service
@@ -38,4 +41,17 @@ public class UserService {
             return UserDto.Response.fromEntity(entity);
         else throw new DefaultException(WRONG_PASSWORD);
     } //ing
+
+    public Timestamp updateUserInputTime(Long userId){
+        User user = userRepository.findById(Long.valueOf(userId))
+                .orElseThrow(() -> new DefaultException(NO_USER));
+
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now);
+        Timestamp ts = Timestamp.valueOf(now);
+        System.out.println(ts);
+        user.setInputtime(ts);
+
+        return UserDto.Response.fromEntity(userRepository.save(user)).getInputTime();
+    }
 }

@@ -5,7 +5,7 @@ import com.sun.istack.NotNull;
 import lombok.*;
 import org.springframework.lang.Nullable;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.List;
 
 public class UserDto {

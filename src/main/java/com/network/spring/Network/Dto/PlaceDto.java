@@ -6,7 +6,8 @@ import com.sun.istack.NotNull;
 import lombok.*;
 import org.springframework.lang.Nullable;
 
-import java.security.Timestamp;
+import java.sql.Time;
+import java.sql.Timestamp;
 
 public class PlaceDto {
     @Getter
@@ -91,6 +92,18 @@ public class PlaceDto {
                     .Most(mostPick)
                     .build();
         }
+    }
+
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Builder
+    public static class AfterBoting {
+        @NotNull
+        private Response PlaceInfo;
+        @NotNull
+        private Timestamp NowUserInputTime;
     }
 }
 
