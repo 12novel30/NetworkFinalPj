@@ -66,19 +66,29 @@ public class PlaceDto {
         private Long Tmp;
         @Nullable
         private String Most;
-        @Nullable
-        private Long Cool;
-        @Nullable
-        private Long Good;
 
         public static PlaceDto.MainView fromEntity(Place place) {
+            String mostPick = "Good";
+            Long mostCount = Long.valueOf(0);
+
+            if (mostCount < place.getHot()){
+                mostPick = "Hot";
+                mostCount = place.getHot();
+            }
+            if (mostCount < place.getCool()){
+                mostPick = "Cool";
+                mostCount = place.getCool();
+            }
+            if (mostCount < place.getGood()){
+                mostPick = "Good";
+                mostCount = place.getGood();
+            }
+
             return MainView.builder()
                     .Id(place.getId())
                     .Name(place.getName())
                     .Tmp(place.getTmp())
-                    .Hot(place.getHot())
-                    .Cool(place.getCool())
-                    .Good(place.getGood())
+                    .Most(mostPick)
                     .build();
         }
     }

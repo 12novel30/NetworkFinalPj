@@ -10,6 +10,7 @@ import net.bytebuddy.dynamic.loading.PackageDefinitionStrategy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 import static com.network.spring.Network.ErrorHandling.ErrorCode.ALREADY_REGISTERED;
@@ -30,19 +31,6 @@ public class HomeController {
 
     @GetMapping("/main")
     public List<PlaceDto.MainView> getAllPlaceInfo(){
-        TravelDto.HomeView homeView = travelservice.getTravelToMainView(travelId);
-        System.out.println("_________________________2");
-        homeView.setPersonList(personService.getPersonInfoInTravel(travelId));
-        System.out.println("_________________________3");
-        //homeView.setPersonCount(personService.getPersonCountInTravel(travelId));
-        //System.out.println("_________________________4");
-        homeView.setEventList(eventService.getEventInfoInTravel(travelId));
-        System.out.println("_________________________5");
-        //homeView.setEventCount(eventService.getEventCountInTravel(travelId));
-        //System.out.println("_________________________6");
-        homeView.setPeriod(eventService.getTravelPeriod(travelId, homeView.getEventCount()));
-        System.out.println("_________________________7");
-        //homeView.setSuperUser(eventService.getSuperUser(travelId));
-        return homeView;
+        return placeService.getAllPlace();
     }
 }
