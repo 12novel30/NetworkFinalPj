@@ -68,4 +68,27 @@ public class PlaceService {
         return PlaceDto.Response.fromEntity(placeRepository.save(place));
     } //fin
 
+    @Transactional
+    public PlaceDto.Response updateTemperature(Long placeId, Long newTemp) {
+        Place place = placeRepository.findById(Long.valueOf(placeId))
+                .orElseThrow(() -> new DefaultException(NO_PLACE));
+
+        place.setTmp(newTemp);
+        place.setHot(Long.valueOf(0));
+        place.setCool(Long.valueOf(0));
+        place.setGood(Long.valueOf(0));
+
+        return PlaceDto.Response.fromEntity(placeRepository.save(place));
+    } //fin
+
+
+    @Transactional
+    public List<PlaceDto.Response> getAllPlaceForAdmin(){
+        List<Place> placeList = placeRepository.findAll();
+        List<PlaceDto.Response> response = new ArrayList<>();
+        for (Place p : placeList){
+            response.add(PlaceDto.Response.fromEntity(p));
+        }
+        return response;
+    }
 }

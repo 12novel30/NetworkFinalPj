@@ -32,4 +32,7 @@ public class User {
 
     @Column(name = "latest_input_time", nullable = true)
     private Timestamp inputtime;
+
+    @Column(name = "is_admin", nullable = false)
+    private Boolean isadmin;
 }

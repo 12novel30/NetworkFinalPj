@@ -33,6 +33,8 @@ public class UserDto {
         private String Email;
         @NotNull
         private String Password;
+        @NotNull
+        private Boolean IsAdmin;
     }
 
     @Getter
@@ -51,6 +53,8 @@ public class UserDto {
         private String Password;
         @Nullable
         private Timestamp InputTime;
+        @NotNull
+        private Boolean IsAdmin;
 
         public static Response fromEntity(User user) {
             return Response.builder()
@@ -59,6 +63,7 @@ public class UserDto {
                     .Email(user.getEmail())
                     .Password(user.getPassword())
                     .InputTime(user.getInputtime())
+                    .IsAdmin(user.getIsadmin())
                     .build();
         }
     }

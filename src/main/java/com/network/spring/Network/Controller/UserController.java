@@ -29,6 +29,7 @@ public class UserController {
                 .Name(map.get("Name").toString())
                 .Email(map.get("Email").toString())
                 .Password(map.get("Password").toString())
+                .IsAdmin(Boolean.valueOf(map.get("IsAdmin").toString()))
                 .build();
         if (!userservice.checkIsEmailRegistered(request.getEmail())) {
             return ResponseEntity.ok(userservice.createUser(request));

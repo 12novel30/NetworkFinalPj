@@ -26,6 +26,7 @@ public class UserService {
                 .name(request.getName())
                 .email(request.getEmail())
                 .password(request.getPassword())
+                .isadmin(request.getIsAdmin())
                 .build();
         userRepository.save(user);
         return UserDto.Response.fromEntity(user);
