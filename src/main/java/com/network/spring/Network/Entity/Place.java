@@ -18,19 +18,17 @@ public class Place {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", length = 20)
+    @Column(name = "place_id", length = 20)
     private Long id;
-
-    @Column(name = "user_name", length = 50, nullable = false)
+    @Column(name = "place_name", length = 50, nullable = false)
     private String name;
+    @Column(name = "place_cur_tmp", length = 19, nullable = true)
+    private Long tmp;
 
-
-    @Column(name = "user_email", length = 50, nullable = false, unique = true)
-    private String email;
-
-    @Column(name = "user_password", length = 50, nullable = false)
-    private String password;
-
-    @Column(name = "latest_input_time", nullable = true)
-    private Timestamp inputtime;
+    @Column(name = "place_feel_hot", nullable = true)
+    private Long hot;
+    @Column(name = "place_feel_cool", nullable = true)
+    private Long cool;
+    @Column(name = "place_feel_good", nullable = true)
+    private Long good;
 }
