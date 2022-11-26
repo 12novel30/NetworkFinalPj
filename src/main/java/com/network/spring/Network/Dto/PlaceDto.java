@@ -99,7 +99,7 @@ public class PlaceDto {
     @AllArgsConstructor
     @NoArgsConstructor
     @Builder
-    public static class AfterBoting {
+    public static class AfterVoting {
         @NotNull
         private Response PlaceInfo;
         @NotNull

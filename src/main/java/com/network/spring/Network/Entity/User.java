@@ -21,9 +21,6 @@ public class User {
     @Column(name = "user_id", length = 20)
     private Long id;
 
-    @Column(name = "user_name", length = 50, nullable = false)
-    private String name;
-
     @Column(name = "user_email", length = 50, nullable = false, unique = true)
     private String email;
 

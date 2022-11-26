@@ -23,7 +23,6 @@ public class UserService {
     @Transactional
     public UserDto.Response createUser(UserDto.Request request) {
         User user = User.builder()
-                .name(request.getName())
                 .email(request.getEmail())
                 .password(request.getPassword())
                 .isadmin(request.getIsAdmin())
@@ -32,6 +31,11 @@ public class UserService {
         return UserDto.Response.fromEntity(user);
     } //fin
 
+    @Transactional
+    public Timestamp getUserInputTime(Long userId) {
+        return userRepository.findById(Long.valueOf(userId))
+                .orElseThrow(() -> new DefaultException(NO_USER)).getInputtime();
+    }
     public boolean checkIsEmailRegistered(String email){
         return userRepository.existsByEmail(email);
     }

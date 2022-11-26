@@ -26,7 +26,6 @@ public class UserController {
     @PostMapping(value = "/register")
     public ResponseEntity<UserDto.Response> createUser(@RequestBody Map map) {
         UserDto.Request request = UserDto.Request.builder()
-                .Name(map.get("Name").toString())
                 .Email(map.get("Email").toString())
                 .Password(map.get("Password").toString())
                 .IsAdmin(Boolean.valueOf(map.get("IsAdmin").toString()))

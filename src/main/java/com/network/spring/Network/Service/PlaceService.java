@@ -54,7 +54,7 @@ public class PlaceService {
     } //fin
 
     @Transactional
-    public PlaceDto.Response updateByBoting(Long placeId, int how) {
+    public PlaceDto.Response updateByVoting(Long placeId, int how) {
         Place place = placeRepository.findById(Long.valueOf(placeId))
                 .orElseThrow(() -> new DefaultException(NO_PLACE));
 
