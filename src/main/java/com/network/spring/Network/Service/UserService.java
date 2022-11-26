@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 import static com.network.spring.Network.ErrorHandling.ErrorCode.*;
 
 @Service
@@ -20,14 +23,19 @@ public class UserService {
     @Transactional
     public UserDto.Response createUser(UserDto.Request request) {
         User user = User.builder()
-                .name(request.getName())
                 .email(request.getEmail())
                 .password(request.getPassword())
+                .isadmin(request.getIsAdmin())
                 .build();
         userRepository.save(user);
         return UserDto.Response.fromEntity(user);
     } //fin
 
+    @Transactional
+    public Timestamp getUserInputTime(Long userId) {
+        return userRepository.findById(Long.valueOf(userId))
+                .orElseThrow(() -> new DefaultException(NO_USER)).getInputtime();
+    }
     public boolean checkIsEmailRegistered(String email){
         return userRepository.existsByEmail(email);
     }
@@ -38,4 +46,17 @@ public class UserService {
             return UserDto.Response.fromEntity(entity);
         else throw new DefaultException(WRONG_PASSWORD);
     } //ing
+
+    public Timestamp updateUserInputTime(Long userId){
+        User user = userRepository.findById(Long.valueOf(userId))
+                .orElseThrow(() -> new DefaultException(NO_USER));
+
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now);
+        Timestamp ts = Timestamp.valueOf(now);
+        System.out.println(ts);
+        user.setInputtime(ts);
+
+        return UserDto.Response.fromEntity(userRepository.save(user)).getInputTime();
+    }
 }

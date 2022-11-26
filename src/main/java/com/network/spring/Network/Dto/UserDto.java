@@ -5,7 +5,7 @@ import com.sun.istack.NotNull;
 import lombok.*;
 import org.springframework.lang.Nullable;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.List;
 
 public class UserDto {
@@ -34,7 +34,7 @@ public class UserDto {
         @NotNull
         private String Password;
         @NotNull
-        private String Account;
+        private Boolean IsAdmin;
     }
 
     @Getter
@@ -46,23 +46,21 @@ public class UserDto {
         @NotNull
         private Long UserId;
         @NotNull
-        private String Name;
-        @NotNull
         private String Email;
         @NotNull
         private String Password;
         @Nullable
-        private String Account;
-        @NotNull
         private Timestamp InputTime;
+        @NotNull
+        private Boolean IsAdmin;
 
         public static Response fromEntity(User user) {
             return Response.builder()
                     .UserId(user.getId())
-                    .Name(user.getName())
                     .Email(user.getEmail())
                     .Password(user.getPassword())
                     .InputTime(user.getInputtime())
+                    .IsAdmin(user.getIsadmin())
                     .build();
         }
     }

@@ -4,7 +4,7 @@ import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 @Getter
 @Setter
@@ -21,9 +21,6 @@ public class User {
     @Column(name = "user_id", length = 20)
     private Long id;
 
-    @Column(name = "user_name", length = 50, nullable = false)
-    private String name;
-
     @Column(name = "user_email", length = 50, nullable = false, unique = true)
     private String email;
 
@@ -32,4 +29,7 @@ public class User {
 
     @Column(name = "latest_input_time", nullable = true)
     private Timestamp inputtime;
+
+    @Column(name = "is_admin", nullable = false)
+    private Boolean isadmin;
 }
