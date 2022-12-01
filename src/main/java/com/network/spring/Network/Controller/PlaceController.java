@@ -26,11 +26,11 @@ public class PlaceController {
 
         return PlaceDto.AfterVoting.builder()
                 .PlaceInfo(nowPlace)
-                .NowUserInputTime(timestamp)
+                .NowUserInputTime(timestamp.toString())
                 .build();
     }
 
-    @PostMapping("/{userId}/{placeId}/boting")
+    @PostMapping("/{userId}/{placeId}/voting")
     public PlaceDto.AfterVoting VotingPlace(@PathVariable int userId,
                                             @PathVariable int placeId,
                                             @RequestBody Map map){
@@ -38,10 +38,11 @@ public class PlaceController {
                                             Long.valueOf(placeId),
                                             Integer.valueOf(map.get("how").toString()));
         Timestamp timestamp = userService.updateUserInputTime(Long.valueOf(userId));
-
+//        System.out.println(timestamp);
+//        System.out.println(timestamp.toString());
         return PlaceDto.AfterVoting.builder()
                 .PlaceInfo(updatePlace)
-                .NowUserInputTime(timestamp)
+                .NowUserInputTime(timestamp.toString())
                 .build();
     }
 
