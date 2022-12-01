@@ -103,7 +103,7 @@ public class PlaceDto {
         @NotNull
         private Response PlaceInfo;
         @NotNull
-        private Timestamp NowUserInputTime;
+        private String NowUserInputTime;
     }
 }
 
