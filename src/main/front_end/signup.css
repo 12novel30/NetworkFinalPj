@@ -1,0 +1,44 @@
+html{
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+    text-align: center;
+    font-family: "Bree Serif", serif;
+}
+body{
+    margin: 0;
+    background-color: orange;
+    padding-top: 10px;
+}
+
+.register-form{
+    width: 400px;
+    border: 0;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto; /*가운데 정렬*/
+}
+
+.text-field{
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+
+.register-btn{
+    color: white;
+    font-size: 14px;
+    background-color: orange;
+    margin-bottom: 30px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}

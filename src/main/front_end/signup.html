@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="signup.css">
+  <script src="login.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans:400,700" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <h1 class="register-head">Create Your Account</h1>
+  </header>
+  <div class="register-form">
+    <form action="signup.html" , method="post">
+      <input id="name" type="text" name="user-name" class="text-field" placeholder="Name">
+      <input id="id" type="text" name="email" class="text-field" placeholder="GIST email address">
+      <input id="pw" type="password" name="password" class="text-field" placeholder="password">
+      <input id="r_pw" type="password" name="confirm-password" class="text-field" placeholder="confirm password">
+      <button type="submit" value="Create account" class="register-btn" onclick="create_id();">Create Account</button>
+    </form>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>
