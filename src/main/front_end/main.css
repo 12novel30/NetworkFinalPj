@@ -1,206 +1,49 @@
-body {
-    line-height: normal;
+html{
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
-.temperature {
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
-.status-of-the,
-body {
-    margin: 0;
-}
-.temperature-status-of-the-libr {
-    position: absolute;
-    top: 38px;
-    left: 444px;
-    font-size: 45px;
-    display: inline-block;
+
+h1{
     text-align: center;
-    width: 625px;
-    height: 167px;
+    font-family: "Bree Serif", serif;
 }
-.f-div,
-.f-div1,
-.f-div2 {
-    position: absolute;
-    top: 235px;
-    left: 205px;
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-    display: inline-block;
-    width: 80px;
-    height: 77px;
+body{
+    margin: 0;
+    background-color: orange;
+    padding-top: 10px;
 }
-.f-div1,
-.f-div2 {
-    left: 717px;
+
+.main-form{
+    width: 400px;
+    border: 0;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto; /*가운데 정렬*/
 }
-.f-div2 {
-    left: 1228px;
+
+div{
+    font-size: 20px;
 }
-.rectangle-icon {
-    position: absolute;
-    top: 329px;
-    left: 541px;
-    width: 431px;
-    height: 175px;
+
+span{
+    font-size: 20px;
+    font-weight: bold;
 }
-.rectangle-icon1,
-.rectangle-icon2,
-.rectangle-icon3,
-.rectangle-icon4 {
-    position: absolute;
-    top: 640px;
-    left: 541px;
-    width: 431px;
-    height: 175px;
+
+
+
+/*********link 색*********/
+a:link{
+    color: orange;
+    text-decoration: none;
 }
-.rectangle-icon2,
-.rectangle-icon3,
-.rectangle-icon4 {
-    left: 1052px;
+a:visited{
+    color: orange;
+    text-decoration: none;
 }
-.rectangle-icon3,
-.rectangle-icon4 {
-    top: 329px;
-    left: 30px;
+a:hover{
+    color: black;
+    text-decoration: underline;
 }
-.rectangle-icon4 {
-    left: 1052px;
-}
-.haedong-library,
-.notebook-space-div,
-.open-space-div {
-    position: absolute;
-    top: 521px;
-    left: 105px;
-    font-size: var(--font-size-base);
-    font-weight: 600;
-    display: inline-block;
-    width: 281px;
-    height: 53px;
-}
-.notebook-space-div,
-.open-space-div {
-    left: 664px;
-    display: none;
-    width: 185px;
-}
-.notebook-space-div {
-    top: 832px;
-    left: 624px;
-    display: inline-block;
-    width: 265px;
-    height: 52px;
-}
-.open-space-div1 {
-    top: 521px;
-    left: 1175px;
-    font-size: var(--font-size-base);
-    width: 185px;
-    height: 53px;
-}
-.current-temperature-23,
-.open-space-div1,
-.readingroom-div {
-    position: absolute;
-    font-weight: 600;
-    display: inline-block;
-}
-.readingroom-div {
-    top: 832px;
-    left: 1160px;
-    font-size: var(--font-size-base);
-    width: 215px;
-    height: 53px;
-}
-.current-temperature-23 {
-    top: 351px;
-    left: 53px;
-    width: 385px;
-    height: 47px;
-}
-.warmer-span {
-    color: var(--color-red);
-}
-.current-temperature-231,
-.going-to-be-warmer {
-    position: absolute;
-    top: 436px;
-    left: 97px;
-    font-weight: 600;
-    display: inline-block;
-    width: 297px;
-    height: 47px;
-}
-.current-temperature-231 {
-    top: 350px;
-    left: 1075px;
-    width: 385px;
-}
-.colder-span {
-    color: var(--color-blue);
-}
-.current-temperature-24,
-.going-to-be-colder,
-.going-to-be-warmer1 {
-    position: absolute;
-    top: 435px;
-    left: 1119px;
-    font-weight: 600;
-    display: inline-block;
-    width: 297px;
-    height: 47px;
-}
-.current-temperature-24,
-.going-to-be-warmer1 {
-    top: 662px;
-    left: 1075px;
-    width: 385px;
-}
-.going-to-be-warmer1 {
-    top: 747px;
-    left: 1119px;
-    width: 297px;
-}
-.current-temperature-22,
-.current-temperature-25,
-.going-to-be-colder1,
-.going-to-be-warmer2 {
-    position: absolute;
-    top: 662px;
-    left: 564px;
-    font-weight: 600;
-    display: inline-block;
-    width: 385px;
-    height: 47px;
-}
-.current-temperature-22,
-.going-to-be-colder1,
-.going-to-be-warmer2 {
-    top: 747px;
-    left: 608px;
-    width: 297px;
-}
-.current-temperature-22,
-.going-to-be-warmer2 {
-    top: 350px;
-    left: 564px;
-    width: 385px;
-}
-.going-to-be-warmer2 {
-    top: 435px;
-    left: 608px;
-    width: 297px;
-}
-.macbook-pro-14-1 {
-    position: relative;
-    background-color: #e8fcc7;
-    width: 100%;
-    height: 982px;
-    overflow: hidden;
-    text-align: left;
-    font-size: var(--font-size-sm);
-    color: var(--color-black);
-    font-family: var(--font-noto-sans-hebrew-droid);
-}
+

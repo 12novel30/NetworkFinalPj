@@ -13,7 +13,7 @@ body{
     padding-top: 10px;
 }
 
-.login-form{
+.place-form{
     width: 400px;
     border: 0;
     border-radius: 5px;
@@ -22,31 +22,43 @@ body{
     margin: 0 auto; /*가운데 정렬*/
 }
 
-.text-field{
-    font-size: 14px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    width: 100%;
+
+form{
+    margin-top: 10px;
 }
 
-.submit-btn{
+.curr-temp{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.voting-status{
+    font-size: 20px;
+}
+
+.cold-people, .hot-people{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cold-btn{
     color: white;
-    font-size: 14px;
-    background-color: orange;
-    margin-bottom: 30px;
+    font-size: 20px;
+    background-color: cornflowerblue;
+    margin-bottom: 10px;
     padding: 10px;
     border: none;
     border-radius: 5px;
-    width: 100%;
+    width:30%
 }
 
-.links{
-    text-align: center;
-}
-
-.links a{
-    font-size: 12px;
-    color: gray;
+.hot-btn{
+    color: white;
+    font-size: 20px;
+    background-color: indianred;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width:30%
 }

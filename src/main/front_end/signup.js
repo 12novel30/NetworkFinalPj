@@ -1,32 +1,53 @@
-const body = document.body;
-document.body.addEventListener('click', () => {
-    body .innerHTML = '<h1>Hello, World</h1>';
-})
+const form = document.querySelector('form')
 
-const btnUpdate = document.getElementById('btn-main');
-btnUpdate.addEventListener('click', () => {
+//-----------------------------------------------------
+// EVENT LISTENERS
+//-----------------------------------------------------
 
-})
+form.addEventListener('submit', signUp)
 
-const items = document.getElementsByTagName('li');
-items.addEventListener('click', () => {
+//-----------------------------------------------------
+// SIGN UP FUNCTION
+//-----------------------------------------------------
 
-})
+function signUp(ev) {
+    ev.preventDefault();   // cancel the browser's default submit behavior
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('id').value;
+    const password = document.getElementById('pw').value;
 
-const highlights = document.getElementsByClassName('highlight');
-for (const highlight of highlights){
-    highlight.style.backgroundColor='cornsilk';
+    const config = {
+        method: 'POST', // type of request
+        headers: {
+            'Content-Type': 'application/json', // data가 JSON으로 encode되었음을 서버에 알려줌.
+            'Accept' : 'application/json',
+        }, // header of object(usually object)
+        body: JSON.stringify({
+            Name: name,
+            Email: email,
+            Password: password,
+            IsAdmin: false,
+        })//서버에 보내지는 values
+    }
+    // default HTTP method for a fetch request is GET
+    // 서버에 데이터를 보내려면 POST method로 바꿔줌.
+    // fetch 함수는 second parameter로 우리가 request에 적용할 수 있는
+    // 여러 다른 settings을 control할 수 있도록 configuration object을 받음.
+    fetch('/api/register', config)
+        .then(checkStatus)
+        .then(res => res.json)
+        .then(res => console.log("결과: ", res))
+
 }
 
+//-----------------------------------------------------
+// HELPER FUNCTIONS
+//-----------------------------------------------------
 
-
-btnUpdate.addEventListener('click', () => {
-    const headline = document.getElementById('headline');
-    const input = document.querySelector('.input-main');
-    headline.textContent = input.value;
-});
-
-
-
-
-location.href = 'main.html';
+function checkStatus(response){
+    if(response.ok) {
+        return Promise.resolve(response);
+    } else {
+        return Promise.reject(new Error(response.statusText));
+    }
+}
