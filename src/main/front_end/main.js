@@ -17,11 +17,11 @@ function fetchData(url){
 
 fetchData('http://localhost:8080/api/main')
     .then(data => {
-            const temp1 = data[0]["tmp"];
-            const temp2 = data[1]["tmp"];
-            const temp3 = data[2]["tmp"];
-            const temp4 = data[3]["tmp"];
-            const temp5 = data[4]["tmp"];
+            const temp1 = data[0].tmp;
+            const temp2 = data[1].tmp;
+            const temp3 = data[2].tmp;
+            const temp4 = data[3].tmp;
+            const temp5 = data[4].tmp;
 
         updateTemp1(temp1);
         updateTemp2(temp2);
@@ -46,23 +46,23 @@ function checkStatus(response){
 
 function updateTemp1(data){
     const place1 = document.querySelector('.hae-dong');
-    const currentTemp1 = `<span> ${data} </span>`;
+    const currentTemp1 = `${data}`;
     place1.innerHTML = currentTemp1;
 }
 
 function updateTemp2(data){
     const place2 = document.querySelector('.laptop-2f');
-    const currentTemp2 = `<span> ${data} </span>`;
+    const currentTemp2 = `${data}`;
     place2.innerHTML = currentTemp2;
 }
 function updateTemp3(data){
     const place3 = document.querySelector('.out-2f');
-    const currentTemp3 = `<span> ${data} </span>`;
+    const currentTemp3 = `${data}`;
     place3.innerHTML = currentTemp3;
 }
 function updateTemp4(data){
     const place4 = document.querySelector('.first-3f');
-    const currentTemp4 = `<span> ${data} </span>`;
+    const currentTemp4 = `${data}`;
     place4.innerHTML = currentTemp4;
 }
 

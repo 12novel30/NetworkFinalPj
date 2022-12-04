@@ -36,7 +36,7 @@ function signUp(ev) {
     fetch('/api/register', config)
         .then(checkStatus)
         .then(res => res.json)
-        .then(res => console.log("결과: ", res))
+        .then(res => console.log(res))
 
 }
 

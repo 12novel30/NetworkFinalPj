@@ -33,10 +33,14 @@ function logIn(e) { //e는 event
     fetch('/api/login', config)
         .then(checkStatus)
         .then(res => res.json())
-        .then(res => {
-            if (res.token) {  //?????????????????????
-                localStorage.setItem("test-token", res.token)
-                const user_id = res["userId"]  //?????????????????????
+        .then(data => {
+            //// 관리자 계정일 시 관리 페이지 접속
+            if (data.isAdmin === True){
+                location.href = "admin.html"
+            }
+            // 관리자 계정 아닌 유저일 시 메인 페이지 접속
+            else if (data.token) {  //// ????????????????
+                localStorage.setItem("test-token", data.token)
                 location.href = "main.html"
             } else {
                 alert('Something wrong in your information.');

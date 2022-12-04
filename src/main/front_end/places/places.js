@@ -7,9 +7,8 @@ const coldPeople = document.querySelector('.cold-people');
 const hotPeople = document.querySelector('.hot-people');
 const currTemp = document.querySelector('.curr-temp');
 
-const user_id = undefined; //???????????
-const place_id = undefined;
-
+const user_id = undefined; // API url을 받으려면 필요함???????????d
+const place_id = undefined; // API url을 받으려면 필요함.
 
 function fetchData(url){
     return fetch(url)
@@ -23,7 +22,7 @@ function fetchData(url){
 
 fetchData(`http://localhost:8080/api/${user_id}/${place_id}`)
     .then(data => {
-            const votedResult = data.message;
+            const votedResult = data.placeInfo;
             modifyResult(votedResult);
             modifyTemp(votedResult);
         }
@@ -42,15 +41,15 @@ function checkStatus(response){
 }
 
 function modifyResult(data){
-    const coldBtn = data["placeInfo"]["cool"];
-    const hotBtn = data["placeInfo"]["hot"];
+    const coldBtn = data.cool;
+    const hotBtn = data.hot;
 
     coldPeople.innerHTML = coldBtn;
     hotPeople.innerHTML = hotBtn;
 }
 
 function modifyTemp(data){
-    const currentTemp = data["placeInfo"]["tmp"];
+    const currentTemp = data.tmp;
 
     currTemp.innerHTML = currentTemp;
 }
@@ -60,8 +59,6 @@ function modifyTemp(data){
 // EVENT LISTENERS
 //-----------------------------------------------------
 const form = document.querySelector('form')
-
-
 
 form.addEventListener('button', postCold)
 form.addEventListener('button', postHot)
