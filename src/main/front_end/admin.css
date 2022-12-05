@@ -58,7 +58,7 @@ table.admin-table thead th {
     width: 150px;
     padding: 10px;
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 0.7em;
     vertical-align: center;
     color: #fff;
     background-color: coral;
@@ -76,6 +76,8 @@ table.admin-table td {
     padding: 10px;
     vertical-align: top;
     background-color: #eee;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 /********FORM ********/

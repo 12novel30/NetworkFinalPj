@@ -2,6 +2,22 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
 
+
+//// 관리자 계정일 시 관리 페이지 접속
+if (data.isAdmin === True){
+    location.href = "admin.html"
+}
+// 관리자 계정 아닌 유저일 시 메인 페이지 접속
+else if (data.token) {  //// ????????????????
+    localStorage.setItem("test-token", data.token)
+    location.href = "main.html"
+} else {
+    alert('Something wrong in your information.');
+}
+
+
+
+//////////////////////////////////////////////////////////
 const body = document.body;
 document.body.addEventListener('click', () => {
     body .innerHTML = '<h1>Hello, World</h1>';

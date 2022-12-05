@@ -7,13 +7,18 @@ const form = document.querySelector('form')
 form.addEventListener('submit', logIn);
 
 //-----------------------------------------------------
+// GET DATA
+//-----------------------------------------------------
+
+
+//-----------------------------------------------------
 // POST DATA
 //-----------------------------------------------------
 
 function logIn(e) { //e는 event
     e.preventDefault();   // cancel the browser's default submit behavior
-    const email = document.getElementById('id').value;
-    const password = document.getElementById('pw').value;
+    const id = document.getElementById('id').value;
+    const pw = document.getElementById('pw').value;
 
     const config = {
         method: 'POST', // type of request
@@ -22,8 +27,8 @@ function logIn(e) { //e는 event
             'Accept' : 'application/json'
         }, // header of object(usually object)
         body: JSON.stringify({
-            Email: email,
-            Password: password,
+            Email: id,
+            Password: pw,
         })//서버에 보내지는 values
     }
     // default HTTP method for a fetch request is GET
@@ -34,18 +39,18 @@ function logIn(e) { //e는 event
         .then(checkStatus)
         .then(res => res.json())
         .then(data => {
-            //// 관리자 계정일 시 관리 페이지 접속
-            if (data.isAdmin === True){
-                location.href = "admin.html"
+            if(data.IsAdmin){
+                location.href = "admin.html"; // admin 계정이면 admin page로 이동
             }
-            // 관리자 계정 아닌 유저일 시 메인 페이지 접속
-            else if (data.token) {  //// ????????????????
-                localStorage.setItem("test-token", data.token)
-                location.href = "main.html"
-            } else {
-                alert('Something wrong in your information.');
+            if(data.Email == id && data.Password == pw){  // email이랑 작성한 id, password랑 작성한 pw 같은지
+                localStorage.setItem("userId", data.UserId); // response에서 전달해준 UserId 받아서 localStorage에 저장
+                location.href = "main.html"; // main page로 이동.
             }
-        });
+            else{
+                alert('Something wrong in your information. If you do not have your account, please register.')
+            }
+        })
+        .catch(error => console.log('Looks like there was a problem', error))
 }
 
 //-----------------------------------------------------
@@ -62,10 +67,10 @@ function fetchData(url){
 // HELPER FUNCTIONS
 //-----------------------------------------------------
 
-function checkStatus(response){
-    if(response.ok) {
-        return Promise.resolve(response);
+function checkStatus(response) {
+    if (response.ok) {
+        return response;
     } else {
-        return Promise.reject(new Error(response.statusText));
+        throw new Error(response.statusText);
     }
 }

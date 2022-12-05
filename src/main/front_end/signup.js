@@ -6,6 +6,7 @@ const form = document.querySelector('form')
 
 form.addEventListener('submit', signUp)
 
+
 //-----------------------------------------------------
 // SIGN UP FUNCTION
 //-----------------------------------------------------
@@ -15,6 +16,7 @@ function signUp(ev) {
     const name = document.getElementById('name').value;
     const email = document.getElementById('id').value;
     const password = document.getElementById('pw').value;
+    const isAdmin = JSON.parse(document.getElementById('admin_false').value);
 
     const config = {
         method: 'POST', // type of request
@@ -26,7 +28,7 @@ function signUp(ev) {
             Name: name,
             Email: email,
             Password: password,
-            IsAdmin: false,
+            IsAdmin: isAdmin,
         })//서버에 보내지는 values
     }
     // default HTTP method for a fetch request is GET
@@ -36,18 +38,17 @@ function signUp(ev) {
     fetch('/api/register', config)
         .then(checkStatus)
         .then(res => res.json)
-        .then(res => console.log(res))
+        .then(data => console.log(data))
 
 }
 
 //-----------------------------------------------------
 // HELPER FUNCTIONS
 //-----------------------------------------------------
-
-function checkStatus(response){
-    if(response.ok) {
-        return Promise.resolve(response);
+function checkStatus(response) {
+    if (response.ok) {
+        return response;
     } else {
-        return Promise.reject(new Error(response.statusText));
+        throw new Error(response.statusText);
     }
 }

@@ -20,8 +20,9 @@
                 <thead>
                     <tr>
                         <th scope="cols">Library</th>
-                        <th scope="cols">Current Temperature(°C)</th>
+                        <th scope="cols">Current Temp.(°C)</th>
                         <th scope="cols">Cold</th>
+                        <th scope="cols">Good</th>
                         <th scope="cols">Hot</th>
                     </tr>
                 </thead>
@@ -31,44 +32,49 @@
                         <th scope="row">1F Hae-Dong Library</th>
                         <td id="hae-dong-curr-temp"></td>
                         <td id="hae-dong-cold"></td>
+                        <td id="hae-dong-good"></td>
                         <td id="hae-dong-hot"></td>
                     <tr>
-                        <th scope="row">2F Outside</th>
+                        <th scope="row">2F Outside Reading room</th>
                         <td id="2f-out-curr-temp"></td>
                         <td id="2f-out-cold"></td>
+                        <td id="2f-out-good"></td>
                         <td id="2f-out-hot"></td>
                     </tr>
                     <tr>
                         <th scope="row">2F Laptop Room</th>
                         <td id="2f-laptop-curr-temp"></td>
                         <td id="2f-laptop-cold"></td>
+                        <td id="2f-laptop-good"></td>
                         <td id="2f-laptop-hot"></td>
                     </tr>
                     <tr>
-                        <th scope="row">3F First Reading room</th>
-                        <td id="3f-1-curr-temp"></td>
-                        <td id="3f-1-cold"></td>
-                        <td id="3f-1-hot"></td>
+                        <th scope="row">3F Outside Reading room</th>
+                        <td id="3f-out-curr-temp"></td>
+                        <td id="3f-out-cold"></td>
+                        <td id="3f-out-good"></td>
+                        <td id="3f-out-hot"></td>
                     </tr>
                     <tr>
-                        <th scope="row">3F Second Reading room</th>
-                        <td id="3f-2-curr-temp"></td>
-                        <td id="3f-2-cold"></td>
-                        <td id="3f-2-hot"></td>
+                        <th scope="row">3F Inside Reading room</th>
+                        <td id="3f-in-curr-temp"></td>
+                        <td id="3f-in-cold"></td>
+                        <td id="3f-in-good"></td>
+                        <td id="3f-in-hot"></td>
                     </tr>
                 </tbody>
             </table>
             <form>
-                <label for="1f-hd-new">1F 해동학술정보실: </label>
+                <label for="1f-hd-new">1F Hae-dong Library: </label>
                 <input id="1f-hd-new" type="text" class="text-field" name="1f_hd_new" placeholder="Set New Temperature"><br>
-                <label for="2f-out-new">2F 바깥 열람실: </label>
+                <label for="2f-out-new">2F Outside Reading room: </label>
                 <input id="2f-out-new" type="text" class="text-field" name="2f_out_new" placeholder="Set New Temperature"><br>
-                <label for="2f-laptop-new">2F 노트북 열람실:</label>
+                <label for="2f-laptop-new">2F Laptop room:</label>
                 <input id="2f-laptop-new" type="text" class="text-field" name="2f_laptop_new" placeholder="Set New Temperature"><br>
-                <label for="3f-1-new">3F 제 1 열람실: </label>
-                <input id="3f-1-new" type="text" class="text-field" name="3f_1_new" placeholder="Set New Temperature"><br>
-                <label>3F 제 2 열람실: </label>
-                <input id="3f-2-new" type="text" class="text-field" name="3f_2_new" placeholder="Set New Temperature"><br>
+                <label for="3f-out-new">3F Outside Reading room: </label>
+                <input id="3f-out-new" type="text" class="text-field" name="3f_in_new" placeholder="Set New Temperature"><br>
+                <label for="3f-in-new">3F Inside Reading room: </label>
+                <input id="3f-in-new" type="text" class="text-field" name="3f_in_new" placeholder="Set New Temperature"><br>
                 <button type="submit" value="Temperature Submit" class="submit-btn">Submit</button>
             </form>
     </div>

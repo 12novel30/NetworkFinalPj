@@ -50,7 +50,32 @@ form{
     border: none;
     border-radius: 5px;
     width:30%
+
 }
+
+.cold-btn:hover {
+    background-color: darkorange;
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+.good-btn{
+    color: white;
+    font-size: 20px;
+    background-color: silver;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width:30%
+}
+
+.good-btn:hover {
+    background-color: darkorange;
+    transition: 0.7s;
+    cursor: pointer;
+}
+
 
 .hot-btn{
     color: white;
@@ -61,4 +86,10 @@ form{
     border: none;
     border-radius: 5px;
     width:30%
+}
+
+.hot-btn:hover {
+    background-color: darkorange;
+    transition: 0.7s;
+    cursor: pointer;
 }

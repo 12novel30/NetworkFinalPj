@@ -7,8 +7,9 @@ const coldPeople = document.querySelector('.cold-people');
 const hotPeople = document.querySelector('.hot-people');
 const currTemp = document.querySelector('.curr-temp');
 
-const user_id = undefined; // API url을 받으려면 필요함???????????d
-const place_id = undefined; // API url을 받으려면 필요함.
+const user_id = localStorage.getItem("userId"); // localStorage에 저장된 userId 값 가져옴.
+let place_id = document.location.href.split() // API url을 받으려면 현재 url을 string으로 받고
+                                                // 이걸 /로 split했을 때, 필요함.
 
 function fetchData(url){
     return fetch(url)
@@ -22,8 +23,8 @@ function fetchData(url){
 
 fetchData(`http://localhost:8080/api/${user_id}/${place_id}`)
     .then(data => {
-            const votedResult = data.placeInfo;
-            modifyResult(votedResult);
+            const votedResult = data.PlaceInfo;   //대문자 맞나?
+            modifyResult(votedResult);              // json 객체로 전달하는거 문제 없겠지?
             modifyTemp(votedResult);
         }
     )
@@ -32,26 +33,26 @@ fetchData(`http://localhost:8080/api/${user_id}/${place_id}`)
 // HELPER FUNCTIONS
 //-----------------------------------------------------
 
-function checkStatus(response){
-    if(response.ok) {
-        return Promise.resolve(response);
+function checkStatus(response) {
+    if (response.ok) {
+        return response;
     } else {
-        return Promise.reject(new Error(response.statusText));
+        throw new Error(response.statusText);
     }
 }
 
 function modifyResult(data){
-    const coldBtn = data.cool;
-    const hotBtn = data.hot;
+    const coldBtn = data.Cool; // 대문자?
+    const hotBtn = data.Hot;   // 대문자?
 
-    coldPeople.innerHTML = coldBtn;
-    hotPeople.innerHTML = hotBtn;
+    coldPeople.innerHTML = `${coldBtn}`;
+    hotPeople.innerHTML =  `${hotBtn}`;
 }
 
 function modifyTemp(data){
-    const currentTemp = data.tmp;
+    const currentTemp = data.Tmp;
 
-    currTemp.innerHTML = currentTemp;
+    currTemp.innerHTML = `${currentTemp}`;
 }
 
 
@@ -77,7 +78,7 @@ function postCold(e){
             'Content-Type': 'application/json',
             'Accept': 'application/json',
         },
-        body: JSON.stringify({how: -1})
+        body: JSON.stringify({how: -1})  // how 첫글자가 대문자 or 소문자???
     }
     fetch(`http://localhost:8080/api/${user_id}/${place_id}/voting`, config)
         .then(checkStatus)
@@ -94,7 +95,7 @@ function postHot(e){
             'Content-Type': 'application/json',
             'Accept': 'application/json',
         },
-        body: JSON.stringify({how: 1})
+        body: JSON.stringify({how: 1})  // how 첫글자가 대문자 or 소문자???
     }
     fetch(`http://localhost:8080/api/${user_id}/${place_id}`, config)
         .then(checkStatus)

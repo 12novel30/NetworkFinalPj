@@ -1,5 +1,4 @@
 
+let place_id = document.location.href.split("/")[6];
 
-fetch("http://localhost:8080/api/admin")
-    .then(res => res.json())
-    .then(data => console.log(data))
+console.log(place_id)
