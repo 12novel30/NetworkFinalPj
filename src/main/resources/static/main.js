@@ -10,13 +10,13 @@ function fetchData(url){
         .catch(error => console.log('Looks like there was a problem', error))
 }
 
-fetchData('http://localhost:8080/api/main')
+fetchData('/api/main')
     .then(data => {
-            const temp1 = data[0].Tmp;
-            const temp2 = data[1].Tmp;
-            const temp3 = data[2].Tmp;
-            const temp4 = data[3].Tmp;
-            const temp5 = data[4].Tmp;
+            const temp1 = data[0].tmp;
+            const temp2 = data[1].tmp;
+            const temp3 = data[2].tmp;
+            const temp4 = data[3].tmp;
+            const temp5 = data[4].tmp;
 
         updateTemp1(temp1);
         updateTemp2(temp2);

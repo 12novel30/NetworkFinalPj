@@ -39,11 +39,11 @@ function logIn(e) { //e는 event
         .then(checkStatus)
         .then(res => res.json())
         .then(data => {
-            if(data.IsAdmin){
+            if(data.isAdmin){
                 location.href = "admin.html"; // admin 계정이면 admin page로 이동
             }
-            if(data.Email == id && data.Password == pw){  // email이랑 작성한 id, password랑 작성한 pw 같은지
-                localStorage.setItem("userId", data.UserId); // response에서 전달해준 UserId 받아서 localStorage에 저장
+            if(data.email == id && data.password == pw){  // email이랑 작성한 id, password랑 작성한 pw 같은지
+                localStorage.setItem("userId", data.userId); // response에서 전달해준 UserId 받아서 localStorage에 저장
                 location.href = "main.html"; // main page로 이동.
             }
             else{
@@ -56,12 +56,7 @@ function logIn(e) { //e는 event
 //-----------------------------------------------------
 // FETCH FUNCTIONS
 //-------------------------------------------------------
-function fetchData(url){
-    return fetch(url)
-            .then(checkStatus)
-            .then(res => res.json())
-            .catch(error => console.log('Looks like there was a problem', error))
-}
+
 
 //-----------------------------------------------------
 // HELPER FUNCTIONS

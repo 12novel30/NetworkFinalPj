@@ -6,7 +6,6 @@ const form = document.querySelector('form')
 
 form.addEventListener('submit', signUp)
 
-
 //-----------------------------------------------------
 // SIGN UP FUNCTION
 //-----------------------------------------------------
@@ -38,7 +37,10 @@ function signUp(ev) {
     fetch('/api/register', config)
         .then(checkStatus)
         .then(res => res.json)
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data);
+            location.href = "index.html"
+        })
 
 }
 

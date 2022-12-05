@@ -61,10 +61,10 @@ function checkStatus(response) {
 }
 
 function modify1(data){
-    const temp1 = data.Tmp;
-    const cold1 = data.Cool;
-    const good1 = data.Good;
-    const hot1 = data.Hot;
+    const temp1 = data.tmp;
+    const cold1 = data.cool;
+    const good1 = data.good;
+    const hot1 = data.hot;
 
     currTemp1.innerHTML = `${temp1}`;   ////interpolation 형식으로 넣어야 하나 아니면 그냥 넣어도 되나?
     currCold1.innerHTML = `${cold1}`;
@@ -73,10 +73,10 @@ function modify1(data){
 }
 
 function modify2(data){
-    const temp2 = data.Tmp;
-    const cold2 = data.Cool;
-    const good2 = data.Good;
-    const hot2 = data.Hot;
+    const temp2 = data.tmp;
+    const cold2 = data.cool;
+    const good2 = data.good;
+    const hot2 = data.hot;
 
     currTemp2.innerHTML = `${temp2}`;
     currCold2.innerHTML = `${cold2}`;
@@ -85,10 +85,10 @@ function modify2(data){
 }
 
 function modify3(data){
-    const temp3 = data.Tmp;
-    const cold3 = data.Cool;
-    const good3 = data.Good;
-    const hot3 = data.Hot;
+    const temp3 = data.tmp;
+    const cold3 = data.cool;
+    const good3 = data.good;
+    const hot3 = data.hot;
 
     currTemp3.innerHTML = `${temp3}`;
     currCold3.innerHTML = `${cold3}`;
@@ -97,10 +97,10 @@ function modify3(data){
 }
 
 function modify4(data){
-    const temp4 = data.Tmp;
-    const cold4 = data.Cool;
-    const good4 = data.Good;
-    const hot4 = data.Hot;
+    const temp4 = data.tmp;
+    const cold4 = data.cool;
+    const good4 = data.good;
+    const hot4 = data.hot;
 
     currTemp4.innerHTML = `${temp4}`;
     currCold4.innerHTML = `${cold4}`;
@@ -109,10 +109,10 @@ function modify4(data){
 }
 
 function modify5(data){
-    const temp5 = data.Tmp;
-    const cold5 = data.Cool;
-    const good5 = data.Good;
-    const hot5 = data.Hot;
+    const temp5 = data.tmp;
+    const cold5 = data.cool;
+    const good5 = data.good;
+    const hot5 = data.hot;
 
     currTemp5.innerHTML = `${temp5}`;
     currCold5.innerHTML = `${cold5}`;
