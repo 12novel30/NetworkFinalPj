@@ -9,8 +9,9 @@ const hotPeople = document.querySelector('.hot-people');
 const currTemp = document.querySelector('.curr-temp');
 
 const user_id = localStorage.getItem("userId"); // localStorage에 저장된 userId 값 가져옴.
-let place_id = document.location.href.split("/")[6]; // API url을 받으려면 현재 url을 string으로 받고
+const place_id = document.location.href.split("/")[4]; // API url을 받으려면 현재 url을 string으로 받고
                                                                 // 이걸 /로 split했을 때, 필요함.
+console.log(place_id)
 
 function fetchData(url){
     return fetch(url)
@@ -89,7 +90,7 @@ function postCold(e){
         .then(res => res.json())
         .then(data =>
             {console.log(data)
-            location.href = "main.html"
+            location.href = "../main.html"
         })
 }
 
@@ -109,7 +110,7 @@ function postGood(e){
         .then(res => res.json())
         .then(data =>
             {console.log(data)
-            location.href = "main.html"
+            location.href = "../main.html"
             })
 
 }
@@ -131,7 +132,7 @@ function postHot(e){
         .then(res => res.json())
         .then(data =>
             {console.log(data)
-            location.href = "main.html"
+            location.href = "../main.html"
         })
 
 }

@@ -42,7 +42,7 @@ function logIn(e) { //e는 event
             if(data.isAdmin){
                 location.href = "admin.html"; // admin 계정이면 admin page로 이동
             }
-            if(data.email == id && data.password == pw){  // email이랑 작성한 id, password랑 작성한 pw 같은지
+            else if(data.email == id && data.password == pw){  // email이랑 작성한 id, password랑 작성한 pw 같은지
                 localStorage.setItem("userId", data.userId); // response에서 전달해준 UserId 받아서 localStorage에 저장
                 location.href = "main.html"; // main page로 이동.
             }
@@ -50,7 +50,10 @@ function logIn(e) { //e는 event
                 alert('Something wrong in your information. If you do not have your account, please register.')
             }
         })
-        .catch(error => console.log('Looks like there was a problem', error))
+        .catch(error => {
+            window.alert('Something wrong in your information. If you do not have your account, please register.')
+            console.log('Looks like there was a problem', error);
+        })
 }
 
 //-----------------------------------------------------

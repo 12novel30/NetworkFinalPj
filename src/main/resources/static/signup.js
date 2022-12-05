@@ -38,8 +38,8 @@ function signUp(ev) {
         .then(checkStatus)
         .then(res => res.json)
         .then(data => {
-            console.log(data);
             location.href = "index.html"
+            console.log(data);
         })
 
 }

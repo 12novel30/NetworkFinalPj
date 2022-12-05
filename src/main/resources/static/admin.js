@@ -37,7 +37,7 @@ function fetchData(url){
         .catch(error => console.log('Looks like there was a problem', error))
 }
 
-fetchData(`http://localhost:8080/api/admin`)
+fetchData(`/api/admin`)
     .then(data => {
             const placeInfo = data;
             modify1(placeInfo[0]);
@@ -80,7 +80,7 @@ function modify2(data){
 
     currTemp2.innerHTML = `${temp2}`;
     currCold2.innerHTML = `${cold2}`;
-    currGood1.innerHTML = `${good2}`;
+    currGood2.innerHTML = `${good2}`;
     currHot2.innerHTML = `${hot2}`;
 }
 
@@ -151,7 +151,7 @@ function changeTemp1(e){
         },
         body: JSON.stringify({newTemp: new_temp1})
     }
-    fetch("http://localhost:8080/api/admin/1/updateTemp", config)
+    fetch("/api/admin/1/updateTemp", config)
         .then(checkStatus)
         .then(res => res.json())
         .then(data => console.log(data))
@@ -169,7 +169,7 @@ function changeTemp2(e){
         },
         body: JSON.stringify({newTemp: new_temp2})
     }
-    fetch("http://localhost:8080/api/admin/2/updateTemp", config)
+    fetch("/api/admin/2/updateTemp", config)
         .then(checkStatus)
         .then(res => res.json())
         .then(data => console.log(data))
@@ -187,7 +187,7 @@ function changeTemp3(e){
         },
         body: JSON.stringify({ newTemp : new_temp3})
     }
-    fetch("http://localhost:8080/api/admin/3/updateTemp", config)
+    fetch("/api/admin/3/updateTemp", config)
         .then(checkStatus)
         .then(res => res.json())
         .then(data => console.log(data))
@@ -205,7 +205,7 @@ function changeTemp4(e){
         },
         body: JSON.stringify({ newTemp : new_temp4})
     }
-    fetch("http://localhost:8080/api/admin/4/updateTemp", config)
+    fetch("/api/admin/4/updateTemp", config)
         .then(checkStatus)
         .then(res => res.json())
         .then(data => console.log(data))
@@ -223,7 +223,7 @@ function changeTemp5(e){
         },
         body: JSON.stringify({ newTemp : new_temp5})
     }
-    fetch("http://localhost:8080/api/admin/5/updateTemp", config)
+    fetch("/api/admin/5/updateTemp", config)
         .then(checkStatus)
         .then(res => res.json())
         .then(data => console.log(data))
