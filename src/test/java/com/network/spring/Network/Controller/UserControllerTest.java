@@ -21,27 +21,27 @@ class UserControllerTest {
     @Autowired(required = true)
     private UserController userController;
 
-    @Test
-    @Commit
-    @DisplayName("회원가입")
-    void createUser() {
-        //given
-        String Name = "haeun3";
-        String Email = "leehaeun3@gm.gist.ac.kr";
-        String Password = "20205149";
-
-        //when
-        Map map = new HashMap<>();
-        map.put("Name", Name);
-        map.put("Email", Email);
-        map.put("Password", Password);
-
-        //then
-        System.out.println(ResponseEntity.ok(userController.createUser(map)));
-    }
-
-
-    @Test
-    void login() {
-    }
+//    @Test
+//    @Commit
+//    @DisplayName("회원가입")
+//    void createUser() {
+//        //given
+//        String Name = "haeun3";
+//        String Email = "leehaeun3@gm.gist.ac.kr";
+//        String Password = "20205149";
+//
+//        //when
+//        Map map = new HashMap<>();
+//        map.put("Name", Name);
+//        map.put("Email", Email);
+//        map.put("Password", Password);
+//
+//        //then
+//        System.out.println(ResponseEntity.ok(userController.createUser(map)));
+//    }
+//
+//
+//    @Test
+//    void login() {
+//    }
 }
