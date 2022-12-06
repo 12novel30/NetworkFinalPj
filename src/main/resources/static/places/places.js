@@ -8,9 +8,9 @@ const goodPeople = document.querySelector('.good-people');
 const hotPeople = document.querySelector('.hot-people');
 const currTemp = document.querySelector('.curr-temp');
 
-const user_id = localStorage.getItem("userId"); // localStorage에 저장된 userId 값 가져옴.
-const place_id = document.location.href.split("/")[4]; // API url을 받으려면 현재 url을 string으로 받고
-                                                                // 이걸 /로 split했을 때, 필요함.
+const user_id = localStorage.getItem("userId"); // localStorage 에 저장된 userId 값 가져옴.
+const place_id = document.location.href.split("/")[4].split(".")[0]; // API url을 받으려면 현재 url을 string으로 받고
+                                                                                        // 이걸 /과 .으로 split.
 console.log(place_id)
 
 function fetchData(url){
@@ -25,7 +25,7 @@ function fetchData(url){
 
 fetchData(`/api/${user_id}/${place_id}`)
     .then(data => {
-            const votedResult = data.placeInfo;   //대문자 맞나?
+            const votedResult = data.placeInfo;
             modifyResult(votedResult);              // json 객체로 전달하는거 문제 없겠지?
             modifyTemp(votedResult);
         }

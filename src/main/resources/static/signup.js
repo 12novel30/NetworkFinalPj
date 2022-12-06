@@ -10,12 +10,12 @@ form.addEventListener('submit', signUp)
 // SIGN UP FUNCTION
 //-----------------------------------------------------
 
-function signUp(ev) {
-    ev.preventDefault();   // cancel the browser's default submit behavior
+function signUp(e) {
+    e.preventDefault();   // cancel the browser's default submit behavior
     const name = document.getElementById('name').value;
     const email = document.getElementById('id').value;
     const password = document.getElementById('pw').value;
-    const isAdmin = JSON.parse(document.getElementById('admin_false').value);
+    const isAdmin = false;
 
     const config = {
         method: 'POST', // type of request
@@ -36,10 +36,15 @@ function signUp(ev) {
     // 여러 다른 settings을 control할 수 있도록 configuration object을 받음.
     fetch('/api/register', config)
         .then(checkStatus)
-        .then(res => res.json)
+        .then(res => res.json())
         .then(data => {
-            location.href = "index.html"
+            window.alert("Your account have successfully created");
             console.log(data);
+            location.href = "index.html";
+        })
+        .catch(error => {
+            window.alert("Please check your information again.");
+            console.log("Looks like there was a problem", error);
         })
 
 }
