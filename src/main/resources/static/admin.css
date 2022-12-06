@@ -76,8 +76,9 @@ table.admin-table td {
     padding: 10px;
     vertical-align: top;
     background-color: #eee;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
+    vertical-align: middle;
 }
 
 /********FORM ********/

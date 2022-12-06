@@ -23,5 +23,4 @@ public class NetworkApplication {
 				.run(args);
 		System.out.println("Start!");
 	}
-
 }
