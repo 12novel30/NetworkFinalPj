@@ -52,7 +52,9 @@ function modifyResult(data){
     const coldBtn = data.placeInfo.cool;
     const goodBtn = data.placeInfo.good;
     const hotBtn = data.placeInfo.hot;   // 대문자?
-
+    console.log(`${coldBtn}`);
+    console.log(`${goodBtn}`);
+    console.log(`${hotBtn}`);
     coldPeople.innerHTML = `${coldBtn}`;
     goodPeople.innerHTML = `${goodBtn}`;
     hotPeople.innerHTML =  `${hotBtn}`;
