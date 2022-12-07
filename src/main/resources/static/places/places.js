@@ -74,9 +74,9 @@ const coldBtn = document.querySelector('.cold-btn')
 const goodBtn = document.querySelector('.good-btn')
 const hotBtn = document.querySelector('.hot-btn')
 
-coldBtn.addEventListener('button', postCold)
-goodBtn.addEventListener('button', postGood)
-hotBtn.addEventListener('button', postHot)
+coldBtn.addEventListener('click', postCold)
+goodBtn.addEventListener('click', postGood)
+hotBtn.addEventListener('click', postHot)
 
 
 //-----------------------------------------------------
@@ -85,7 +85,7 @@ hotBtn.addEventListener('button', postHot)
 
 function postCold(e){
     e.preventDefault();
-
+    console.log("debug");
     const config = {
         method: 'POST',
         headers: {
@@ -118,7 +118,7 @@ function postGood(e){
         },
         body: JSON.stringify({how: 0})  // how 첫글자가 대문자 or 소문자???
     }
-    fetch(`/api/${user_id}/${place_id}`, config)
+    fetch(`/api/${user_id}/${place_id}/voting`, config)
         .then(checkStatus)
         .then(res => res.json())
         .then(data =>
@@ -143,13 +143,14 @@ function postHot(e){
         },
         body: JSON.stringify({how: 1})  // how 첫글자가 대문자 or 소문자???
     }
-    fetch(`/api/${user_id}/${place_id}`, config)
+    fetch(`/api/${user_id}/${place_id}/voting`, config)
         .then(checkStatus)
         .then(res => res.json())
         .then(data =>
             {   console.log(data);
                 window.alert("You have successfully voted.")
                 location.href = "../main.html"
+                ㅌ
             })
         .catch(error => {
             console.log("Looks like there was a problem", error);
