@@ -154,7 +154,12 @@ function changeTemp1(e){
     fetch("/api/admin/1/updateTemp", config)
         .then(checkStatus)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data =>
+            {   console.log(data)
+                window.alert("The new temperature of Hae-Dong Library has been set successfully.")
+                location.href = location.href;
+            }
+            )
 }
 
 function changeTemp2(e){
@@ -172,7 +177,12 @@ function changeTemp2(e){
     fetch("/api/admin/2/updateTemp", config)
         .then(checkStatus)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data =>
+            {   console.log(data)
+                window.alert("The new temperature of 2F outside reading room has been set successfully.")
+                location.href = location.href;
+            }
+        )
 }
 
 function changeTemp3(e){
@@ -190,7 +200,12 @@ function changeTemp3(e){
     fetch("/api/admin/3/updateTemp", config)
         .then(checkStatus)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data =>
+            {   console.log(data)
+                window.alert("The new temperature of 2F laptop room has been set successfully.")
+                location.href = location.href;
+            }
+        )
 }
 
 function changeTemp4(e){
@@ -208,7 +223,12 @@ function changeTemp4(e){
     fetch("/api/admin/4/updateTemp", config)
         .then(checkStatus)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data =>
+            {   console.log(data)
+                window.alert("The new temperature of 3F outside reading room has been set successfully.")
+                location.href = location.href;
+            }
+        )
 }
 
 function changeTemp5(e){
@@ -226,7 +246,12 @@ function changeTemp5(e){
     fetch("/api/admin/5/updateTemp", config)
         .then(checkStatus)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data =>
+            {   console.log(data)
+                window.alert("The new temperature of 3F inside reading room has been set successfully.")
+                location.href = location.href;
+            }
+        )
 }
 
 
